@@ -5,7 +5,7 @@
 | Concern | Choice |
 |---------|--------|
 | Framework | Vite + React (TypeScript) |
-| CSS | Plain CSS / Sass (`.module.scss`) |
+| CSS | Plain CSS (`.module.css`) — no Sass/SCSS |
 | State | Zustand |
 | Routing | react-router-dom v7 |
 | Package mgr | npm |
