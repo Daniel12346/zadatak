@@ -8,9 +8,8 @@ interface SidebarProps {
 }
 
 const links = [
-  { to: '/dashboard', label: 'Dashboard', icon: '◆' },
-  { to: '/users', label: 'Users', icon: '●' },
-  { to: '/settings', label: 'Settings', icon: '⚙' },
+  { to: '/dashboard', label: 'Overview', icon: '01' },
+  { to: '/users', label: 'Directory', icon: '02' },
 ]
 
 export function Sidebar({ open, onClose }: SidebarProps) {
@@ -21,8 +20,8 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       {open && <div className={styles.overlay} onClick={onClose} />}
       <aside className={`${styles.sidebar} ${open ? styles.sidebarOpen : ''}`}>
         <div className={styles.brand}>
-          <span className={styles.brandIcon}>A</span>
-          Admin
+          <div className={styles.brandIcon}>A</div>
+          <span className={styles.brandText}>Admin</span>
         </div>
 
         <nav className={styles.nav}>
@@ -43,7 +42,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           <div className={styles.spacer} />
           <button className={styles.logout} onClick={logout}>
             <span className={styles.linkIcon}>→</span>
-            Sign out
+            Exit
           </button>
         </nav>
       </aside>

@@ -2,55 +2,138 @@
   max-width: 1100px;
 }
 
+.heroSection {
+  margin-bottom: 48px;
+  position: relative;
+}
+
 .greeting {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 0 4px;
+  font-family: var(--display);
+  font-size: 64px;
+  font-weight: 400;
   color: var(--text-h);
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-family: var(--mono);
+  font-size: 13px;
   color: var(--text-muted);
-  margin: 0 0 28px;
+  margin: 12px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.decorativeLine {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin-top: 24px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
   margin-bottom: 32px;
 }
 
 .card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--border);
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: pointer;
 }
 
-.cardIcon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius);
+.card:hover {
+  border-color: var(--accent);
+  transform: translate(-4px, -4px);
+  z-index: 2;
+}
+
+.cardAccent {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+}
+
+.cardContent {
+  padding: 28px 24px;
+}
+
+.cardHeader {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 
 .cardLabel {
-  font-size: 15px;
-  color: var(--text);
-  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardValue {
-  font-size: 28px;
+  font-family: var(--mono);
+  font-size: 36px;
   font-weight: 700;
   color: var(--text-h);
+  letter-spacing: -0.02em;
 }
 
+/* Asymmetric offset for visual interest */
+.card:nth-child(2) {
+  margin-top: 16px;
+}
 
+.card:nth-child(4) {
+  margin-top: 32px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card:nth-child(2),
+  .card:nth-child(4) {
+    margin-top: 0;
+  }
+  
+  .card:nth-child(2),
+  .card:nth-child(3) {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .greeting {
+    font-size: 42px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card:nth-child(n) {
+    margin-top: 0;
+  }
+}

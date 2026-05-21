@@ -1,43 +1,42 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --text-muted: #9ca3af;
-  --bg: #fff;
-  --bg-sidebar: #f9fafb;
-  --bg-card: #fff;
-  --border: #e5e4e7;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-  --sidebar-w: 240px;
-  --navbar-h: 56px;
-  --radius: 8px;
-  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-  font: 15px/1.5 var(--sans);
-  color-scheme: light dark;
+  --text: #d4d4d8;
+  --text-h: #fafafa;
+  --text-muted: #a1a1aa;
+  --bg: #09090b;
+  --bg-sidebar: #09090b;
+  --bg-card: #18181b;
+  --border: #27272a;
+  --accent: hsl(15, 100%, 72%);
+  --accent-dark: hsl(15, 100%, 55%);
+  --accent-bg: hsla(15, 100%, 72%, 0.08);
+  --accent-border: hsla(15, 100%, 72%, 0.4);
+  --shadow-sm: none;
+  --shadow: none;
+  --sidebar-w: 220px;
+  --navbar-h: 64px;
+  --radius: 0px;
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --display: Georgia, 'Times New Roman', serif;
+  --mono: 'Courier New', Courier, monospace;
+  font: 15px/1.6 var(--sans);
+  color-scheme: dark;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --text-muted: #6b7280;
-    --bg: #16171d;
-    --bg-sidebar: #1a1b23;
-    --bg-card: #1f2028;
-    --border: #2e303a;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --text: #52525b;
+    --text-h: #18181b;
+    --text-muted: #71717a;
+    --bg: #fafafa;
+    --bg-sidebar: #fafafa;
+    --bg-card: #fff;
+    --border: #e4e4e7;
+    --accent-bg: hsla(15, 100%, 72%, 0.1);
+    --accent-border: hsla(15, 100%, 72%, 0.5);
   }
 }
 
@@ -54,8 +53,11 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-h);
+  font-family: var(--display);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 p {
@@ -65,4 +67,28 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Subtle grain texture overlay */
+#root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }

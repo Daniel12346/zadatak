@@ -26,16 +26,11 @@ export function LoginPage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.wave} aria-hidden="true">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="hsl(15, 100%, 72%)" />
-              <stop offset="100%" stop-color="hsl(15, 100%, 55%)" />
-            </linearGradient>
-          </defs>
-          <path d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,224C840,245,960,267,1080,250.7C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="url(#waveGradient)"/>
-        </svg>
+      <div className={styles.layers} aria-hidden="true">
+        <div className={styles.layer} />
+        <div className={styles.layer} />
+        <div className={styles.layer} />
+        <div className={styles.layer} />
       </div>
       <form className={styles.card} onSubmit={handleSubmit}>
         <h1 className={styles.title}>Sign in</h1>
