@@ -100,6 +100,7 @@ export function UsersPage() {
 
   return (
     <div className={styles.page}>
+      <div className={styles.bgPattern} aria-hidden="true" />
       <div className={styles.header}>
         <h2 className={styles.title}>Users</h2>
         <button className={styles.addBtn} onClick={openAdd}>+ Add User</button>
