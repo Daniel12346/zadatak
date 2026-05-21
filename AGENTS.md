@@ -69,3 +69,7 @@ Wrap `<Outlet />` in a `ProtectedRoute` component that redirects to `/login` if 
 ## Error Boundary
 
 Place it at the layout level so a crash in one page doesn't break the whole app. Log the error, show a friendly message + retry button.
+
+## Agent behavior
+
+- **Ask before implementing suggestions.** If the agent proposes changes (e.g., "you could add X" or "consider doing Y") and the user did not explicitly ask for changes, the agent must ask for confirmation before writing any code.
