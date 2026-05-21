@@ -4,6 +4,15 @@ export interface AuthUser {
   name: string
 }
 
+export interface User {
+  id: string
+  name: string
+  email: string
+  role: string
+  status: 'active' | 'inactive'
+  createdAt: string
+}
+
 export interface AuthState {
   token: string | null
   user: AuthUser | null
