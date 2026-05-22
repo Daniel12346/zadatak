@@ -14,6 +14,7 @@ export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const location = useLocation()
   const title = titles[location.pathname] ?? 'Dashboard'
+  document.title = `${title} — Admin Dashboard`
 
   return (
     <div className={styles.layout}>

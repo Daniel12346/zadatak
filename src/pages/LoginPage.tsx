@@ -7,6 +7,7 @@ export function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  document.title = 'Sign In — Admin Dashboard'
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
