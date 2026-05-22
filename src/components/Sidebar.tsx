@@ -42,7 +42,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           <div className={styles.spacer} />
           <button className={styles.logout} onClick={logout}>
             <span className={styles.linkIcon}>→</span>
-            Exit
+            Log out
           </button>
         </nav>
       </aside>

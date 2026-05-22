@@ -73,3 +73,4 @@ Place it at the layout level so a crash in one page doesn't break the whole app.
 ## Agent behavior
 
 - **Ask before implementing suggestions.** If the agent proposes changes (e.g., "you could add X" or "consider doing Y") and the user did not explicitly ask for changes, the agent must ask for confirmation before writing any code.
+- **Never commit unless explicitly asked.** Only commit changes when the user directly says "commit".
