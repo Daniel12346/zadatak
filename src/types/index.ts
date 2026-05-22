@@ -13,6 +13,15 @@ export interface User {
   createdAt: string
 }
 
+export interface UserFormData {
+  name: string
+  email: string
+  role: string
+  status: 'active' | 'inactive'
+}
+
+export const emptyUserForm: UserFormData = { name: '', email: '', role: 'Viewer', status: 'active' }
+
 export interface AuthState {
   token: string | null
   user: AuthUser | null
